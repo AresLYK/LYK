@@ -1,0 +1,60 @@
+C51 COMPILER V9.60.7.0   MAXK                                                              10/27/2023 16:18:43 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAXK
+OBJECT MODULE PLACED IN .\Objects\maxk.obj
+COMPILER INVOKED BY: D:\KeilIDE\C51\BIN\C51.EXE maxk.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\maxk
+                    -.lst) TABS(2) OBJECT(.\Objects\maxk.obj)
+
+line level    source
+
+   1          #include"REGX52.h"
+   2          #include"Delay.h"
+   3          
+   4          unsigned char maxk()
+   5          {
+   6   1        unsigned char keynumber=0;
+   7   1        
+   8   1        P1=0xFF;
+   9   1        P1_3=0;
+  10   1        if (P1_7 == 0) { Delay(20); while (P1_7 == 0); Delay(20); keynumber = 1; }
+  11   1        if (P1_6 == 0) { Delay(20); while (P1_6 == 0); Delay(20); keynumber = 5; }
+  12   1        if (P1_5 == 0) { Delay(20); while (P1_5 == 0); Delay(20); keynumber = 9; }
+  13   1        if (P1_4 == 0) { Delay(20); while (P1_4 == 0); Delay(20); keynumber = 13;}
+  14   1        P1 = 0xFF;
+  15   1        P1_2 = 0;
+  16   1        if (P1_7 == 0) { Delay(20); while (P1_7 == 0); Delay(20); keynumber = 2; }
+  17   1        if (P1_6 == 0) { Delay(20); while (P1_6 == 0); Delay(20); keynumber = 6; }
+  18   1        if (P1_5 == 0) { Delay(20); while (P1_5 == 0); Delay(20); keynumber = 10; }
+  19   1        if (P1_4 == 0) { Delay(20); while (P1_4 == 0); Delay(20); keynumber = 14; }
+  20   1        P1 = 0xFF;
+  21   1        P1_1 = 0;
+  22   1        if (P1_7 == 0) { Delay(20); while (P1_7 == 0); Delay(20); keynumber = 3; }
+  23   1        if (P1_6 == 0) { Delay(20); while (P1_6 == 0); Delay(20); keynumber = 7; }
+  24   1        if (P1_5 == 0) { Delay(20); while (P1_5 == 0); Delay(20); keynumber = 11;}
+  25   1        if (P1_4 == 0) { Delay(20); while (P1_4 == 0); Delay(20); keynumber = 15;}
+  26   1        P1 = 0xFF;
+  27   1        P1_0= 0;
+  28   1        if (P1_7 == 0) { Delay(20); while (P1_7 == 0); Delay(20); keynumber = 4; }
+  29   1        if (P1_6 == 0) { Delay(20); while (P1_6 == 0); Delay(20); keynumber = 8; }
+  30   1        if (P1_5 == 0) { Delay(20); while (P1_5 == 0); Delay(20); keynumber = 12; }
+  31   1        if (P1_4 == 0) { Delay(20); while (P1_4 == 0); Delay(20); keynumber = 16; }
+  32   1      
+  33   1        return keynumber;
+  34   1      }
+  35          #endif
+*** WARNING C312 IN LINE 35 OF maxk.c: misplaced endif control
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    393    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
