@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              10/29/2023 12:11:23 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\KeilIDE\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include"timer0.h"
+   3          #include"key.h"
+   4          #include"INTRINS.H"
+   5          unsigned char keynum,ledmode;
+   6          void main()
+   7          {    
+   8   1        P2 = 0xFE;
+   9   1        timer0_init();
+  10   1        while(1)
+  11   1        {
+  12   2          keynum=key();
+  13   2            if (keynum)
+  14   2            {
+  15   3              if (keynum == 1)
+  16   3              {
+  17   4                ledmode++;
+  18   4              if(ledmode>=2) ledmode = 0;
+  19   4              }
+  20   3            }
+  21   2        }
+  22   1      }
+  23          
+  24          void timer0_routine() interrupt 1
+  25          {
+  26   1        static unsigned int count;
+  27   1        TL0 = 0x66;       //设置定时初始值
+  28   1        TH0 = 0xFC;
+  29   1        count++;
+  30   1      if (count>=500)
+  31   1        { 
+  32   2          count = 0;
+  33   2          if (ledmode==0)P2=_crol_(P2,1);
+  34   2          if (ledmode==1)P2=_cror_(P2,1);
+  35   2        }
+  36   1        
+  37   1      }
+  38          
+  39          
+  40          
+  41          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    116    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
